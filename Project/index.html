@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call a Bike</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      Call a Bike
+      <img src="icon.png" alt="Icon" class="logo-icon">
+    </div>
+    <nav class="nav">
+      <a href="index.html">Startseite</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Call a Bike</h1>
+      <p>Dashboard von Fahrradbuchungsvorgängen in Frankfurt</p>
+      <button onclick="navigateToVisualization()">Start</button>
+    </div>
+    <div class="hero-image">
+      <div class="image-container">
+        <img src="Ffm.jpg" alt="Francfort_bike_img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Description -->
+  <section id="description" class="description">
+    <h2>Das sauberste Verkehrsmittel der Welt</h2>
+    <p>
+      Mit Call a Bike schonst Du die Umwelt. Denn das Rad rollt nicht nur emissionsfrei durch die Stadt, es entlastet auch den Verkehr. Und wer mit dem Fahrrad fährt, bleibt fit und schont seinen Geldbeutel.
+    </p>
+    <div class="stats">
+      <div><span>4</span> verschiedene Tarifmodelle -  Für Jeden was dabei</div>
+      <div><span>Entleihe per App</span> Einfacher geht's nicht!</div>
+      <div><span>über 13.000</span> Fahrräder bundesweit</div>
+      <div><span>über 1 Mio.</span> Kunden</div>
+    </div>
+  </section>
+
+  <!-- Start Button Navigation -->
+<script>
+  function navigateToVisualization() {
+    window.location.href = "visualization.html";
+  }
+</script>
+</body>
+</html>

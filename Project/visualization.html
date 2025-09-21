@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylesVis.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+        integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+        crossorigin=""></script>
+
+    <!-- MarkerCluster CSS und JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+    <!-- Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <!-- Heatmap Plugin -->
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      Call a Bike
+      <img src="icon.png" alt="Icon" class="logo-icon">
+    </div>
+    <nav class="nav">
+      <a href="index.html">Startseite</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- Visualization -->
+  <section class="visualization-page">
+    <aside class="filters">
+      <h3>Filter</h3>
+      <br><br>
+      <form>
+        <label for="Darstellung" id="illustration">Darstellung:</label>
+        <br>
+        <div class="filters2">
+        <br>
+          <label><input type="checkbox" id="routingCheckbox" /> Routing</label><br>
+          <label><input type="checkbox" id="heatmapCheckbox" /> Heat Map</label><br>
+          <label><input type="checkbox" id="alleStationensCheckbox" /> Alle Stationen</label><br>
+        </div>
+        <br><br>
+        <label for="Stationen" id="stations">Stationen:</label><br>
+        <br>
+        <div class="filters3">
+          <select id="stationDropdown">
+            <option value="">-- Wählen Sie eine Station --</option>
+            <option value="all">Alle Buchungen</option>
+            <option value="start">Start-Stationen</option>
+            <option value="end">End-Stationen</option>
+        </select>
+        </div>
+        <br><br>
+        <label for="Buchungsportale">Buchungsportale:</label><br>
+        <br>
+        <div class="filters4">
+          <select id="portalDropdown">
+            <option value="">-- Wählen Sie ein Portal --</option>
+            <option value="iPhoneCAB">iPhone CAB</option>
+            <option value="IVR">IVR</option>
+            <option value="AndroidCAB">Android CAB</option>
+            <option value="Windows">Windows</option>
+            <option value="LIDL-BIKE">LIDL-BIKE</option>
+            <option value="TechnikerF_5(-67212-)">Techniker F_5 (-67212-)</option>
+            <option value="iPhoneSRH">iPhone SRH</option>
+            <option value="AndroidSRH">Android SRH</option>
+            <option value="iPhoneKON">iPhone KON</option>
+        </select>
+        </div>  
+        <br><br>
+        <label for="Wochentage">Wochentage:</label><br>
+        <br>
+        <div class="filters5"> 
+          <select id="wochentagDropdown">
+            <option value="">-- Wählen Sie einen Wochentag --</option>
+            <option value="Montag">Montag</option>
+            <option value="Dienstag">Dienstag</option>
+            <option value="Mittwoch">Mittwoch</option>
+            <option value="Donnerstag">Donnerstag</option>
+            <option value="Freitag">Freitag</option>
+            <option value="Samstag">Samstag</option>
+            <option value="Sonntag">Sonntag</option>
+        </select><br>            
+        </div>
+      </form>
+      <br><br>
+      <hr>
+      <br><br>
+      <section class="filters6">
+        <h3>Adresse suchen</h3>
+        <div class="search">
+            <input type="text" id="address-input" placeholder="Adresse eingeben..." size="22">
+            <button onclick="searchAddress()">Suchen</button>
+        </div>
+    </section>
+    </aside>
+    <div class="visualization-content">
+      <h3>Standorte auf der Karte</h3>
+      <div class="map-placeholder">
+        <div id="map"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+          <script src="JS/map.js"></script>
+          <script src="JS/markerFarbe.js"></script>
+          <script src="JS/event_listener.js"></script>
+          <script src="JS/fetch_data.js"></script>
+          <script src="JS/heatmap.js"></script>
+          <script src="JS/routing.js"></script>
+</body>
+</html>
